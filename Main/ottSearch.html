@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../Component/footer.css" type="text/css" rel="stylesheet">
+    <link href="../Component/menu.css" type="text/css" rel="stylesheet">
+    <link href="ottSearch.css" type="text/css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="left">
+
+        </div>
+        <div class="right">
+            <div class="rightUp">
+                <div class="rightUp">
+                    <div class="searchText">ott 콘텐츠 데이터 조회</div>
+                    <input class="contentSearchInput" placeholder="콘텐츠 이름">
+                    <button class="search" type="button">조회</button>
+                </div>
+            </div>
+            <table>
+                <th class="td1">title</th>
+                <th class="td2">rawtitle</th>
+                <th class="td1">contentId</th>
+                <th class="td2">offers</th>
+                <th class="td1">imageURL</th>
+                <th class="td2">URL</th>
+                <th class="td1">연관 콘텐츠</th>
+                <th></th>
+                <tr>
+                    <td class="td2"></td>
+                    <td class="td3"></td>
+                    <td class="td2"></td>
+                    <td class="td3"></td>
+                    <td class="td2"></td>
+                    <td class="td3"></td>
+                    <td class="td2"></td>
+                    <td><button type="button" class="editBtn">수정</button></td>
+                </tr>
+                <tr>
+                    <td class="td1"></td>
+                    <td class="td2"></td>
+                    <td class="td1"></td>
+                    <td class="td2"></td>
+                    <td class="td1"></td>
+                    <td class="td2"></td>
+                    <td class="td1"></td>
+                    <td><button type="button" class="editBtn">수정</button></td>
+                </tr>
+                <tr>
+                    <td class="td2"></td>
+                    <td class="td3"></td>
+                    <td class="td2"></td>
+                    <td class="td3"></td>
+                    <td class="td2"></td>
+                    <td class="td3"></td>
+                    <td class="td2"></td>
+                    <td><button type="button" class="editBtn">수정</button></td>
+                </tr>
+                <tr>
+                    <td class="td1"></td>
+                    <td class="td2"></td>
+                    <td class="td1"></td>
+                    <td class="td2"></td>
+                    <td class="td1"></td>
+                    <td class="td2"></td>
+                    <td class="td1"></td>
+                    <td><button type="button" class="editBtn">수정</button></td>
+                </tr>
+                <tr>
+                    <td class="td2"></td>
+                    <td class="td3"></td>
+                    <td class="td2"></td>
+                    <td class="td3"></td>
+                    <td class="td2"></td>
+                    <td class="td3"></td>
+                    <td class="td2"></td>
+                    <td><button type="button" class="editBtn">수정</button></td>
+                </tr>
+                <tr>
+                    <td class="td1"></td>
+                    <td class="td2"></td>
+                    <td class="td1"></td>
+                    <td class="td2"></td>
+                    <td class="td1"></td>
+                    <td class="td2"></td>
+                    <td class="td1"></td>
+                    <td><button type="button" class="editBtn">수정</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <footer id="footer"></footer>
+    <script>
+        $(document).ready(function () {
+            $("#footer").load("../Component/footer.html");
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".left").load("../Component/menu.html");
+        });
+    </script>
+</body>
+</html>

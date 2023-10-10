@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="login.css" type="text/css" rel="stylesheet">
+    <link href="../Component/footer.css" type="text/css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Login</title>
+</head>
+<body class="wrapper">
+    <form class="loginForm">
+        <h1 class="title">관리자 페이지</h1>
+        <div class="idWrapper">
+            <label for="id">로그인 이름</label>
+            <input type="text" placeholder="아이디를 입력해주세요." id="id">
+        </div>
+        <div class="pwWrapper">
+            <label for="id">로그인 암호</label>
+            <input type="password" placeholder="암호를 입력해주세요." id="pw">
+        </div>
+        <button type="submit" class="loginBtn">로그인</button>
+    </form>
+    <footer id="footer"></footer>
+    <script>
+        $(document).ready(function () {
+            $("#footer").load("../Component/footer.html");
+        });
+    </script>
+</body>
+</html>

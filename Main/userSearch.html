@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../Component/footer.css" type="text/css" rel="stylesheet">
+    <link href="../Component/menu.css" type="text/css" rel="stylesheet">
+    <link href="userSearch.css" type="text/css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="left">
+
+        </div>
+        <div class="right">
+            <div class="rightUp">
+                <div class="searchText">사용자 조회</div>
+                <div>
+                    <div class="idWrapper">
+                        <input class="idSearchInput" placeholder="id로 조회">
+                        <button class="search" type="button">조회</button>
+                    </div>
+                    <div class="emailWrapper">
+                        <input class="emailSearchInput" placeholder="email로 조회">
+                        <button class="search" type="button">조회</button>
+                    </div>
+                </div>
+            </div>
+            <table>
+                <th class="td1">userid</th>
+                <th class="td2">email</th>
+                <th class="td1">등록 시간</th>
+                <th class="td2">사용자 삭제</th>
+                <tr>
+                    <td class="td2">ㄴㅁㄹㄴㅇㄹㄴㅇㄻㄴㄹㄴㅁㅇㄻㄴ</td>
+                    <td class="td3">jorupaza@gachon.ac.kr</td>
+                    <td class="td2">0000s년 00월 00시 </td>
+                    <td class="td3"><button type="button" class="deleteBtn">X</button></td>
+                </tr>
+                <tr>
+                    <td class="td1"></td>
+                    <td class="td2"></td>
+                    <td class="td1"></td>
+                    <td class="td2"><button type="button" class="deleteBtn">X</button></td>
+                </tr>
+                <tr>
+                    <td class="td2"></td>
+                    <td class="td3"></td>
+                    <td class="td2"></td>
+                    <td class="td3"><button type="button" class="deleteBtn">X</button></td>
+                </tr>
+                <tr>
+                    <td class="td1"></td>
+                    <td class="td2"></td>
+                    <td class="td1"></td>
+                    <td class="td2"><button type="button" class="deleteBtn">X</button></td>
+                </tr>
+                <tr>
+                    <td class="td2"></td>
+                    <td class="td3"></td>
+                    <td class="td2"></td>
+                    <td class="td3"><button type="button" class="deleteBtn">X</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <footer id="footer"></footer>
+    <script>
+        $(document).ready(function () {
+            $("#footer").load("../Component/footer.html");
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".left").load("../Component/menu.html");
+        });
+    </script>
+</body>
+</html>
