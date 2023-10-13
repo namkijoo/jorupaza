@@ -7,9 +7,35 @@
     <link href="../Component/footer.css" type="text/css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Login</title>
+    <script>
+      const adminId=document.querySelector("#id").value
+      const password=document.querySelector("#pw").value
+      function checkLogin() {
+            const adminId = document.querySelector("#id").value;
+            const password = document.querySelector("#pw").value;
+
+            $.ajax({
+                type: "POST",
+                url: "", 
+                data: { adminId: adminId, password: password },
+                dataType: "json",
+                success: function(response) {
+                    if (response.success) {
+                        window.location.href = "../Main/index.html";
+                    } else {
+                        alert("아이디 또는 비밀번호가 잘못되었습니다. 다시 시도하세요.");
+                    }
+                },
+                error: function(error) {
+                    console.log("AJAX 요청 실패: " + error);
+                    alert("로그인 실패")
+                }
+            });
+        }
+    </script>
 </head>
 <body class="wrapper">
-    <form class="loginForm">
+    <form class="loginForm" onsubmit="checkLogin()">
         <h1 class="title">관리자 페이지</h1>
         <div class="idWrapper">
             <label for="id">로그인 이름</label>
@@ -24,8 +50,8 @@
     <footer id="footer"></footer>
     <script>
         $(document).ready(function () {
-            $("#footer").load("../Component/footer.html");
+            $("#footer").load("/Component/footer.html");
         });
-    </script>
+    </script>script>
 </body>
 </html>
