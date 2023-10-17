@@ -7,13 +7,10 @@
     <link href="../Component/menu.css" type="text/css" rel="stylesheet">
     <link href="userSearch.css" type="text/css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 </head>
 <body>
     <div class="wrapper">
-        <div class="left">
-
-        </div>
+        <div class="left" data-include="../Component/menu.html"></div>
         <div class="right">
             <div class="rightUp">
                 <div class="searchText">사용자 조회</div>
@@ -66,16 +63,6 @@
             </table>
         </div>
     </div>
-    <footer id="footer"></footer>
-    <script>
-        $(document).ready(function () {
-            $("#footer").load("../Component/footer.html");
-        });
-    </script>
-    <script>
-        $(document).ready(function () {
-            $(".left").load("../Component/menu.html");
-        });
-    </script>
+    <footer id="footer" data-include="../Component/footer.html"></footer>
 </body>
 </html>

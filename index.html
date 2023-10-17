@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://ceprj.gachon.ac.kr:60002/views/css/index.css" type="text/css" rel="stylesheet">
+    <link href="http://ceprj.gachon.ac.kr:60002/views/css/footer.css" type="text/css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Login</title>
+    <script>
+      function checkLogin() {
+            const adminId = document.querySelector("#id").value;
+            const password = document.querySelector("#pw").value;
+            var data = {
+            adminid: adminId,
+            password: password
+            };
+            // fetch("http://ceprj.gachon.ac.kr:60002/manage/jorupaza", {
+            //     method: "POST",
+            //     body: JSON.stringify(data),
+            // })
+            if(adminId==""){
+                alert("아이디를 입력해주세요")
+                return
+            }
+            else if(password==""){
+                alert("비밀번호를 입력해주세요")
+                return
+            }
+            else{
+                $.ajax({
+                    url: "http://ceprj.gachon.ac.kr:60002/manage/jorupaza",
+                    method: "POST",
+                    data: JSON.stringify(data),
+                    contentType: "application/json",
+                    complete:function (response) {
+                        console.log(response)
+                        if (response.status === 200) {
+                            sessionStorage.setItem("adminId",adminId)
+                            window.location.href="Main/outline.html"
+                            document.body.querySelector('.wrapper').style.opacity="0"
+                        }
+                        else{
+                            document.body.querySelector('.wrapper').style.opacity="0"
+                        }
+                }
+            });
+        }       
+    }
+    const wrapper = document.body.querySelector(".wrapper")
+    wrapper.addEventListener("transitionend",function(){
+        wrapper.style.display="none"
+        alert("성공")
+    })
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <form class="loginForm" onsubmit="event.preventDefault(); checkLogin();">
+        <h1 class="title">관리자 페이지</h1>
+        <div class="idWrapper">
+            <input type="text" placeholder="ID를 입력해주세요." id="id">
+        </div>
+        <div class="pwWrapper">
+            <input type="password" placeholder="PW를 입력해주세요." id="pw">
+        </div>
+        <button type="submit" class="loginBtn">로그인</button>
+    </form>
+    <footer id="footer">
+        <!-- <div id="wrapper">
+            <div class="inform">
+                <div>GitHub</div>
+                <div>Email : jorupaza@gachon.ac.kr</div>
+                <div>Copyright 2023.jorupaza All Rights Reserved</div>
+            </div>
+            <div class="logo">
+                <img src="Image/logo.jpg" alt="logo" class="logoImage">
+            </div>
+        </div> -->
+    </footer>
+    </div>
+    
+    
+    <script>
+        $(document).ready(function () {
+            $("#footer").load("http://ceprj.gachon.ac.kr:60002/views/html/footer.html");
+        });
+        
+    </script>
+</body>
+</html>

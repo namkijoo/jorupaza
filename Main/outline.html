@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../Component/footer.css" type="text/css" rel="stylesheet">
+    <link href="../Component/menu.css" type="text/css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function loadCSS(filename) {
+            var link = document.createElement("link");
+            link.setAttribute("rel", "stylesheet");
+            link.setAttribute("type", "text/css");
+            link.setAttribute("href", filename);
+            document.head.appendChild(link);
+        }
+
+        function unloadCSS(filename) {
+            var links = document.querySelectorAll('link[rel="stylesheet"]');
+            for (var i = 0; i < links.length; i++) {
+                if (links[i].getAttribute("href") === filename) {
+                    links[i].remove();
+                }
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+    <div class="wrapper">
+        <!--메뉴 -->
+        <div class="left">
+            <div class="menuWrapper">
+                <div class="menu1">
+                    <a href="outline.html" onclick="outline.css">개요</a>
+                </div>
+                <div class="menu2">
+                    <div class="menu2-1">사용자 관리</div>
+                    <a href="userSearch.html"><div class="menu2-2">사용자 조회</div></a>
+                </div>
+                <div class="menu3">
+                    <div class="menu3-1">데이터 관리</div>
+                    <a href="ottSearch.html"><div class="menu3-2">OTT 콘텐츠 데이터 조회</div></a>
+                    <a href="ottAdd.html"><div class="menu3-3">OTT 콘텐츠 데이터 추가</div></a>
+                </div>
+                <div class="menu4">
+                    <div class="menu4-1">학습 관리</div>
+                    <div class="menu4-2">데이터 학습</div>
+                    <div class="menu4-3">학습 성능 모니터링</div>
+                </div>
+                <span class="out">나가기</span>
+            </div>
+        </div>
+
+        <!--메인 -->
+        <div class="right">
+
+            <!--개요-->
+            <div>
+                <table>
+                    <tr>
+                        <td class="td1">서비스 상태</td>
+                        <td class="td2">정상적으로 서비스 중</td>
+                    </tr>
+                    <tr>
+                        <td class="td3">서버 IP 주소</td>
+                        <td class="td1">
+                            서버 내부 ip:
+                            서버 외부 ip:<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td1">서버 연결 시간</td>
+                        <td class="td2">0000년 00월 00일 00시 00분</td>
+                    </tr>
+                    <tr>
+                        <td class="td3">등록된 사용자 수</td>
+                        <td class="td1">0명</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!--사용자 조회-->
+            <div style="display: none;">
+                <table>
+                    <th class="td1">userid</th>
+                    <th class="td2">email</th>
+                    <th class="td1">등록 시간</th>
+                    <th class="td2">사용자 삭제</th>
+                    <tr>
+                        <td class="td2">ㄴㅁㄹㄴㅇㄹㄴㅇㄻㄴㄹㄴㅁㅇㄻㄴ</td>
+                        <td class="td3">jorupaza@gachon.ac.kr</td>
+                        <td class="td2">0000s년 00월 00시 </td>
+                        <td class="td3"><button type="button" class="deleteBtn">X</button></td>
+                    </tr>
+                    <tr>
+                        <td class="td1"></td>
+                        <td class="td2"></td>
+                        <td class="td1"></td>
+                        <td class="td2"><button type="button" class="deleteBtn">X</button></td>
+                    </tr>
+                    <tr>
+                        <td class="td2"></td>
+                        <td class="td3"></td>
+                        <td class="td2"></td>
+                        <td class="td3"><button type="button" class="deleteBtn">X</button></td>
+                    </tr>
+                    <tr>
+                        <td class="td1"></td>
+                        <td class="td2"></td>
+                        <td class="td1"></td>
+                        <td class="td2"><button type="button" class="deleteBtn">X</button></td>
+                    </tr>
+                    <tr>
+                        <td class="td2"></td>
+                        <td class="td3"></td>
+                        <td class="td2"></td>
+                        <td class="td3"><button type="button" class="deleteBtn">X</button></td>
+                    </tr>
+                </table>
+            </div>
+
+            <!--OTT 콘텐츠 데이터 조회-->
+            <div style="display: none;">
+                <table>
+                    <th class="td1">title</th>
+                    <th class="td2">rawtitle</th>
+                    <th class="td1">contentId</th>
+                    <th class="td2">offers</th>
+                    <th class="td1">imageURL</th>
+                    <th class="td2">URL</th>
+                    <th class="td1">연관 콘텐츠</th>
+                    <th></th>
+                    <tr>
+                        <td class="td2"></td>
+                        <td class="td3"></td>
+                        <td class="td2"></td>
+                        <td class="td3"></td>
+                        <td class="td2"></td>
+                        <td class="td3"></td>
+                        <td class="td2"></td>
+                        <td><button type="button" class="editBtn">수정</button></td>
+                    </tr>
+                    <tr>
+                        <td class="td1"></td>
+                        <td class="td2"></td>
+                        <td class="td1"></td>
+                        <td class="td2"></td>
+                        <td class="td1"></td>
+                        <td class="td2"></td>
+                        <td class="td1"></td>
+                        <td><button type="button" class="editBtn">수정</button></td>
+                    </tr>
+                    <tr>
+                        <td class="td2"></td>
+                        <td class="td3"></td>
+                        <td class="td2"></td>
+                        <td class="td3"></td>
+                        <td class="td2"></td>
+                        <td class="td3"></td>
+                        <td class="td2"></td>
+                        <td><button type="button" class="editBtn">수정</button></td>
+                    </tr>
+                    <tr>
+                        <td class="td1"></td>
+                        <td class="td2"></td>
+                        <td class="td1"></td>
+                        <td class="td2"></td>
+                        <td class="td1"></td>
+                        <td class="td2"></td>
+                        <td class="td1"></td>
+                        <td><button type="button" class="editBtn">수정</button></td>
+                    </tr>
+                    <tr>
+                        <td class="td2"></td>
+                        <td class="td3"></td>
+                        <td class="td2"></td>
+                        <td class="td3"></td>
+                        <td class="td2"></td>
+                        <td class="td3"></td>
+                        <td class="td2"></td>
+                        <td><button type="button" class="editBtn">수정</button></td>
+                    </tr>
+                    <tr>
+                        <td class="td1"></td>
+                        <td class="td2"></td>
+                        <td class="td1"></td>
+                        <td class="td2"></td>
+                        <td class="td1"></td>
+                        <td class="td2"></td>
+                        <td class="td1"></td>
+                        <td><button type="button" class="editBtn">수정</button></td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- OTT콘텐츠  추가-->
+            <div style="display: none;">
+                <table>
+                    <th class="td1">title</th>
+                    <th class="td2">rawtitle</th>
+                    <th class="td1">contentId</th>
+                    <th class="td2">offers</th>
+                    <th class="td1">imageURL</th>
+                    <th class="td2">URL</th>
+                    <th class="td1">연관 콘텐츠</th>
+                    <tr>
+                        <td class="td2"></td>
+                        <td class="td3"></td>
+                        <td class="td2"></td>
+                        <td class="td3"></td>
+                        <td class="td2"></td>
+                        <td class="td3"></td>
+                        <td class="td2"></td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <footer id="footer">
+        <div id="wrapper">
+            <div class="inform">
+                <div>GitHub</div>
+                <div>Email : jorupaza@gachon.ac.kr</div>
+                <div>Copyright 2023.jorupaza All Rights Reserved</div>
+            </div>
+            <div class="logo">
+                <img src="../Image/logo.jpg" alt="logo" class="logoImage">
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
